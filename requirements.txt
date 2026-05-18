@@ -1,0 +1,11 @@
+fastapi>=0.115.0
+uvicorn[standard]>=0.30.0
+python-multipart>=0.0.9
+httpx>=0.27.0
+Pillow>=9.0
+
+# OCR engines (at least one required)
+rapidocr_onnxruntime>=1.2.0
+ppocr-lite>=0.5.0
+# paddlepaddle>=3.0.0  # uncomment if PaddleOCR is available on your platform
+# paddleocr>=3.0.0

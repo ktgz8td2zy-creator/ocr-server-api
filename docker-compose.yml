@@ -1,0 +1,12 @@
+services:
+  ocr-api:
+    build: .
+    ports:
+      - "${OCR_PORT:-9418}:9418"
+    environment:
+      - OCR_ENGINE=${OCR_ENGINE:-rapidocr}
+      - OCR_DET_THRESH=${OCR_DET_THRESH:-0.3}
+      - OCR_DET_BOX_THRESH=${OCR_DET_BOX_THRESH:-0.5}
+      - OCR_DET_UNCLIP_RATIO=${OCR_DET_UNCLIP_RATIO:-1.6}
+      - OCR_MAX_IMAGE_MB=${OCR_MAX_IMAGE_MB:-20}
+    restart: unless-stopped
