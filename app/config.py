@@ -5,7 +5,7 @@ from dataclasses import dataclass, field
 @dataclass
 class Settings:
     host: str = field(default_factory=lambda: os.getenv("OCR_HOST", "0.0.0.0"))
-    port: int = field(default_factory=lambda: int(os.getenv("OCR_PORT", "9418")))
+    port: int = field(default_factory=lambda: int(os.getenv("PORT", os.getenv("OCR_PORT", "9418"))))
     workers: int = field(default_factory=lambda: int(os.getenv("OCR_WORKERS", "1")))
 
     # Engine selection: "auto", "paddleocr", "ppocr_lite"
